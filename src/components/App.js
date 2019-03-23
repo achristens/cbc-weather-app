@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import WeatherDetails from './WeatherDetails';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends Component {
     if (this.state.errorMessage) {
       content = <div>Error: {this.state.errorMessage}</div>
     } else if (this.state.lat && this.state.long) {
-      content = <div>THIS IS WHERE WE WILL PASS PROPS TO A COMPONENT FOR GETTING WEATHER</div>
+      content = <WeatherDetails latitude={this.state.lat} longitude={this.state.long} />
     } else {
       content = <div>Please accept location request</div>
     }
