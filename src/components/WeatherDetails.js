@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class WeatherDetails extends Component {
-  
-  render() {
-    return (
-      <div>
-        <h1>WeatherDetails Component</h1>
-        <div>This will display details</div>
-        <div>{this.props.longitude}</div>
-        <div>{this.props.latitude}</div>
-        <button>This will be the Refresh button</button>
-      </div>
-    );
-  }
+const WeatherDetails = () => {
+  return(
+    <div>
+      <div>WEATHER DETAILS COMPONENT</div>
+    </div>
+  );
 }
 
-export default WeatherDetails;
+function mapStateToProps({ weather }){
+  return { weather };
+}
+
+export default connect(mapStateToProps)(WeatherDetails);
