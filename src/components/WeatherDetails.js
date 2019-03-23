@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const WeatherDetails = () => {
-  // <div>{this.state.weather}</div>
-  return(
+const WeatherDetails = (props) => {
+  return (
     <div>
+      <div>The current temperature in:</div>
+      <div className="location">{props.city}, {props.country}</div>
+      <div className="temperature">is {props.temperature}°C</div>
+      <div className="wind">With a {props.windSpeed} coming in from the {props.windDirection}</div>
     </div>
-  );
+  )
 }
 
-function mapStateToProps({ weather }){
-  return { weather };
-}
 
-export default connect(mapStateToProps)(WeatherDetails);
+export default WeatherDetails;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { fetchWeather } from '../actions/index';
+import WeatherDetails from './WeatherDetails';
 
 class Weather extends Component {
 
@@ -24,24 +25,32 @@ class Weather extends Component {
       const weatherData = JSON.parse(this.props.weather[0]);
       this.setState({
         city: weatherData.city[0],
-        temperature: weatherData.temperature[0],
+        temperature: Math.ceil(weatherData.temperature[0].value[0]),
         wind: weatherData.wind[0]
       });
     }
   }
 
   renderWeatherData() {
-    if (this.state.city) {
-      return <div>{this.state.city.name[0]}</div>
-    }
+    return <WeatherDetails
+              city={this.state.city.name[0]}
+              country={this.state.city.country[0]}
+              temperature={this.state.temperature}
+              windSpeed={this.state.wind.speed[0].name[0]}
+              windDirection={this.state.wind.direction[0].name[0]}
+            />
   }
+
+  handleClick = () => {
+    this.props.fetchWeather(this.props.latitude, this.props.longitude);
+  }
+
   render() {
     return (
       <div>
         <h1>Weather Component</h1>
-        <div>{this.props.weather}</div>
-        <div>{this.renderWeatherData()}</div>
-        <button>This will be the Refresh button</button>
+        {this.state.city ? this.renderWeatherData() : "Waiting for data..." }
+        <button onClick={this.handleClick}>Click to refresh</button>
       </div>
     );
   }
