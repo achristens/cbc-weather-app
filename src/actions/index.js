@@ -9,8 +9,9 @@ export const FETCH_WEATHER_SUCCESS = "FETCH_WEATHER_SUCCESS";
 
 export const fetchWeather = (latitude, longitude) => dispatch => {
   const url = `${ROOT_URL}&lat=${latitude}&lon=${longitude}&mode=xml&units=metric`;
+  const response = axios.get(url);
 
-  const response = axios.get(url).then(response => {
+  response.then(response => {
         parseString(response.data, {mergeAttrs: true}, function(error, result) {
           if (result) {
             dispatch({ type: FETCH_WEATHER_SUCCESS, payload: JSON.stringify(result.current) })
@@ -19,5 +20,5 @@ export const fetchWeather = (latitude, longitude) => dispatch => {
             throw error;
           }
         })
-      })
+      });
 }
