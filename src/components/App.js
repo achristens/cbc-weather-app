@@ -21,7 +21,6 @@ class App extends Component {
       }),
       err => this.setState({ errorMessage: err.message })
     );
-    document.body.classList.add(this.timeOfDay());
   }
 
   timeOfDay() {
@@ -44,6 +43,7 @@ class App extends Component {
     if (this.state.errorMessage) {
       content = <div className="pageload-styles">Error: {this.state.errorMessage}</div>
     } else if (this.state.lat && this.state.long) {
+      document.body.classList.add(this.timeOfDay());
       content = <Weather latitude={this.state.lat} longitude={this.state.long} />
     } else {
       content = <div className="pageload-styles">Please accept location request</div>

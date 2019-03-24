@@ -44,14 +44,19 @@ class Weather extends Component {
   }
 
   renderWeatherData() {
-    return <WeatherDetails
-              city={this.state.city.name[0]}
-              country={this.state.city.country[0]}
-              weather={this.state.weather}
-              temperature={this.state.temperature}
-              windSpeed={this.state.wind.speed[0].name[0]}
-              windDirection={this.state.wind.direction[0].name[0]}
-            />
+    return (
+      <div>
+        <WeatherDetails
+                city={this.state.city.name[0]}
+                country={this.state.city.country[0]}
+                weather={this.state.weather}
+                temperature={this.state.temperature}
+                windSpeed={this.state.wind.speed[0].name[0]}
+                windDirection={this.state.wind.direction[0].name[0]}
+              />
+        <button onClick={this.handleClick}>Refresh</button>
+      </div>
+    )
   }
 
   handleClick = () => {
@@ -62,7 +67,6 @@ class Weather extends Component {
     return (
       <div>
         {this.state.city ? this.renderWeatherData() : "Waiting for data..." }
-        <button onClick={this.handleClick}>Refresh</button>
       </div>
     );
   }
