@@ -74,7 +74,7 @@ class Weather extends Component {
 
   render() {
     return (
-      <div>
+      <div className="weather-body">
         { this.state.loading ? "Waiting for data..." : this.renderWeatherData() }
         { this.state.err ? `Error fetching data: ${this.state.err}` : "" }
       </div>

@@ -80,25 +80,29 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.weather-detail {
-  margin: 5% 25%;
+.weather-body {
+  padding-bottom: 2rem;
 
-  .location, .temperature {
-    font-weight: 700;
-  }
+  .weather-detail {
+    margin: 5% 25%;
 
-  .temperature {
-    font-size: 15rem;
-    sup {
-      font-size: 3rem;
+    .location, .temperature {
+      font-weight: 700;
     }
-  }
 
-  .wind {
-    text-transform: lowercase;
-  }
+    .temperature {
+      font-size: 15rem;
+      sup {
+        font-size: 3rem;
+      }
+    }
 
-  .wind::first-letter, .description::first-letter {
-    text-transform: capitalize;
+    .wind {
+      text-transform: lowercase;
+    }
+
+    .wind::first-letter, .description::first-letter {
+      text-transform: capitalize;
+    }
   }
 }
