@@ -11,6 +11,8 @@ body {
   background-image: -webkit-linear-gradient(bottom, #08AEEA 0%, #2AF598 100%);
   background-image: -o-linear-gradient(bottom, #08AEEA 0%, #2AF598 100%);
   background-image: linear-gradient(to top, #08AEEA 0%, #2AF598 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: $source-sans;
   font-weight: 300;
   font-size: 3rem;
