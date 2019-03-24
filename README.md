@@ -2,8 +2,8 @@
 
 ## Steps to Install
 
-Git clone the project to your desktop via the command line
-From the command line, `cd` into the project
-Run `npm install`
-Run `npm start`
-Party!
+1. Git clone the project to your desktop via the command line
+2. From the command line, `cd` into the project
+3. Run `npm install`
+4. Run `npm start`
+5. Party! Or just enjoy knowing your local weather.
