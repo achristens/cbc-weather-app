@@ -13,7 +13,7 @@ class Weather extends Component {
       city: null,
       temperature: null,
       wind: null,
-      weather: null
+      weather: null,
     }
   }
 
@@ -28,7 +28,7 @@ class Weather extends Component {
       this.setState({
         city: weatherData.city[0],
         temperature: Math.ceil(weatherData.temperature[0].value[0]),
-        wind: weatherData.wind[0],
+        wind: weatherData.wind[0]
       });
       this.mapWeatherObject(weatherData);
     }
@@ -38,6 +38,7 @@ class Weather extends Component {
     const weather = [];
     weatherData.weather.map(item => {
       weather.push(item.value);
+      return weather;
     });
     this.setState({ weather });
   }
