@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700');
+
+$source-sans: 'Source Sans Pro', sans-serif;
+
+html {
+  height: 100%;
+}
+
+
+body {
+  height: 100%;
+  background-image: -webkit-linear-gradient(bottom, #08AEEA 0%, #2AF598 100%);
+  background-image: -o-linear-gradient(bottom, #08AEEA 0%, #2AF598 100%);
+  background-image: linear-gradient(to top, #08AEEA 0%, #2AF598 100%);
+  font-family: $source-sans;
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.morning {
+  background-image: -webkit-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: -o-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+.day {
+  background-image: -webkit-linear-gradient(30deg, #f6d365 0%, #fda085 100%);
+  background-image: -o-linear-gradient(30deg, #f6d365 0%, #fda085 100%);
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.evening {
+  background-image: -webkit-linear-gradient(bottom, #a18cd1 0%, #fbc2eb 100%);
+  background-image: -o-linear-gradient(bottom, #a18cd1 0%, #fbc2eb 100%);
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.night {
+  background-image: -webkit-linear-gradient(330deg, #29323c 0%, #485563 100%);
+  background-image: -o-linear-gradient(330deg, #29323c 0%, #485563 100%);
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: #f3eaea;
+}
+
+.weather-detail {
+  margin: 5% 25%;
+
+  .location, .temperature {
+    font-weight: 700;
+  }
+
+  .temperature {
+    font-size: 15rem;
+    sup {
+      font-size: 3rem;
+    }
+  }
+
+  .wind {
+    text-transform: lowercase;
+  }
+
+  .wind::first-letter, .description::first-letter {
+    text-transform: capitalize;
+  }
+}

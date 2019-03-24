@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Weather from './Weather';
+import "../App.scss";
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,22 @@ class App extends Component {
       }),
       err => this.setState({ errorMessage: err.message })
     );
+    document.body.classList.add(this.timeOfDay());
+  }
+
+  timeOfDay() {
+    const time = new Date().getHours();
+    let className;
+    if (time >= 5 && time <= 8) {
+      className = "morning";
+    } else if (time > 8 && time <= 18){
+      className = "day";
+    } else if (time > 18 && time <= 21) {
+      className = "evening"
+    } else {
+      className = "night"
+    }
+    return className;
   }
 
   determineRenderView() {

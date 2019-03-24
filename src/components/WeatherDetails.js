@@ -12,12 +12,24 @@ const WeatherDetails = (props) => {
     return weatherDescription;
   }
 
+  const displayDate = () => {
+    let date = new Date();
+    date = date.toLocaleString("en-us", {
+      weekday: "long",
+      month: "long",
+      day: "numeric"
+    });
+    return date;
+  }
+
   return (
-    <div>
-      <div>The current weather for:</div>
-      <div className="location">{props.city}, {props.country}</div>
+    <div className="weather-detail">
+      <div>
+        <div className="location">{props.city}, {props.country}</div>
+        <div>{displayDate()}</div>
+      </div>
+      <div className="temperature">{props.temperature}<sup>°C</sup></div>
       <div className="description">{checkWeatherDescription()}</div>
-      <div className="temperature">It is {props.temperature}°C</div>
       <div className="wind">With a {props.windSpeed} coming in from the {props.windDirection}</div>
     </div>
   )
