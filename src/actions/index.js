@@ -12,11 +12,11 @@ export const fetchWeather = (latitude, longitude) => dispatch => {
   const response = axios.get(url);
 
   response.then(response => {
-        parseString(response.data, {mergeAttrs: true}, function(error, result) {
+        parseString(response.data, { mergeAttrs: true }, function(error, result) {
           if (result) {
-            dispatch({ type: FETCH_WEATHER_SUCCESS, payload: JSON.stringify(result.current) })
+            dispatch({ type: FETCH_WEATHER_SUCCESS, payload: JSON.stringify(result.current) });
           } else if (error) {
-            dispatch({ type: FETCH_FAILURE, payload: "Failure to fetch weather" })
+            dispatch({ type: FETCH_FAILURE, payload: "Failure to fetch weather" });
             throw error;
           }
         })
