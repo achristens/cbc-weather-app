@@ -62,7 +62,7 @@ class Weather extends Component {
     return (
       <div>
         {this.state.city ? this.renderWeatherData() : "Waiting for data..." }
-        <button onClick={this.handleClick}>Click to refresh</button>
+        <button onClick={this.handleClick}>Refresh</button>
       </div>
     );
   }

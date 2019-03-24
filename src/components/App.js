@@ -42,11 +42,11 @@ class App extends Component {
   determineRenderView() {
     let content;
     if (this.state.errorMessage) {
-      content = <div>Error: {this.state.errorMessage}</div>
+      content = <div className="pageload-styles">Error: {this.state.errorMessage}</div>
     } else if (this.state.lat && this.state.long) {
       content = <Weather latitude={this.state.lat} longitude={this.state.long} />
     } else {
-      content = <div>Please accept location request</div>
+      content = <div className="pageload-styles">Please accept location request</div>
     }
     return content;
   }
