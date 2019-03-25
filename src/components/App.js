@@ -26,9 +26,9 @@ class App extends Component {
   timeOfDay() {
     const time = new Date().getHours();
     let className;
-    if (time >= 5 && time <= 8) {
+    if (time >= 5 && time <= 10) {
       className = "morning";
-    } else if (time > 8 && time <= 18){
+    } else if (time > 10 && time <= 18){
       className = "day";
     } else if (time > 18 && time <= 21) {
       className = "evening"
